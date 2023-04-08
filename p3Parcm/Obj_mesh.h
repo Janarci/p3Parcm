@@ -1,5 +1,6 @@
 ﻿#pragma once
 #define STB_IMAGE_IMPLEMENTATION
+
 #include "stb_image.h"
 
 struct VertexData {
@@ -8,7 +9,7 @@ struct VertexData {
 	glm::vec3 normal;
 };
 
-struct Objtest {
+struct ObjData {
 	tinyobj::attrib_t attrib;
 	std::vector<tinyobj::shape_t> shapes;
 	GLulong numFaces;
@@ -31,7 +32,7 @@ bool FileExists(const std::string& absFilename) {
 }
 
 
-void LoadTextureData(Objtest* objData, GLuint* texture, GLuint* texture2, int num) {
+void LoadTextureData(ObjData* objData, GLuint* texture, GLuint* texture2, int num) {
 	int width, height;
 	std::string baseDir = objData->baseDir;
 
@@ -106,7 +107,7 @@ void LoadTextureData(Objtest* objData, GLuint* texture, GLuint* texture2, int nu
 }
 
 //load obj models
-void LoadObjFile(Objtest* objData, std::string filename) {
+void LoadObjFile(ObjData* objData, std::string filename) {
 	std::string warn;
 	std::string err;
 
@@ -142,7 +143,7 @@ void LoadObjFile(Objtest* objData, std::string filename) {
 
 }
 
-void LoadObjToMemory2(Objtest* objData, GLfloat scaleFactor, GLfloat tOffset[]) {
+void LoadObjToMemory2(ObjData* objData, GLfloat scaleFactor, GLfloat tOffset[]) {
 
 	std::vector<glm::vec3> vertices;
 	std::vector<GLuint> indices;
@@ -235,7 +236,7 @@ void LoadObjToMemory2(Objtest* objData, GLfloat scaleFactor, GLfloat tOffset[]) 
 	objData->vaoId = VAO;
 }
 
-void LoadObjToMemory(Objtest* objData, GLfloat scaleFactor, GLfloat tOffset[], GLuint* texture, GLuint* texture2, int num) {
+void LoadObjToMemory(ObjData* objData, GLfloat scaleFactor, GLfloat tOffset[], GLuint* texture, GLuint* texture2, int num) {
 	std::vector<glm::vec3> vertices;
 	std::vector<glm::vec3> orderedVertices;
 	std::vector<GLuint> indices;
