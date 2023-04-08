@@ -172,7 +172,7 @@ int main() {
 #pragma region object
 	GLfloat bunnyOffset[] = { 0.0f, -0.5f, 0.0f };
 
-	Objtest GaneshaObjData;
+	ObjData GaneshaObjData;
 	LoadObjFile(&GaneshaObjData, "Ganesha/Ganesha.obj");
 
 	LoadObjToMemory(&GaneshaObjData, 5.0f, bunnyOffset, texture, multiTexture, 3);
@@ -180,37 +180,37 @@ int main() {
 
 	//std::cout << GaneshaObjData.baseDir<<"\n";
 
-	Objtest SkullObjData;
+	ObjData SkullObjData;
 	LoadObjFile(&SkullObjData, "Skull/Skull.obj");
 	LoadObjToMemory(&SkullObjData, 5.0f, bunnyOffset, texture, multiTexture, 4);
 	//LoadTextureData(&SkullObjData, "skull_diffuse.jpg", texture, 4);
 
-	Objtest SwordObjData;
+	ObjData SwordObjData;
 	LoadObjFile(&SwordObjData, "Sword/moonlight.obj");
 	LoadObjToMemory(&SwordObjData, 5.0f, bunnyOffset, texture, multiTexture, 5);
 	//LoadTextureData(&SwordObjData, "Tex_0014_0.png", texture, 5);
 
-	Objtest PedestalObjData;
+	ObjData PedestalObjData;
 	LoadObjFile(&PedestalObjData, "pedestal/10421_square_pedastal_iterations-2.obj");
 	LoadObjToMemory(&PedestalObjData, 5.0f, bunnyOffset, texture, multiTexture, 6);
 	//LoadTextureData(&PedestalObjData, "10421_square_pedastal_diffuse.jpg", texture, 6);
 
-	Objtest FloorObjData;
+	ObjData FloorObjData;
 	LoadObjFile(&FloorObjData, "Floor/CobbleStones2.obj");
 	LoadObjToMemory(&FloorObjData, 5.0f, bunnyOffset, texture, multiTexture, 7);
 	//LoadTextureData(&FloorObjData, "BrickRound0108_5_S.jpg", texture, 7);
 
-	Objtest EarthObjData;
+	ObjData EarthObjData;
 	LoadObjFile(&EarthObjData, "earth/Earth.obj");
 	LoadObjToMemory(&EarthObjData, 5.0f, bunnyOffset, texture, multiTexture, 0);
 	//LoadTextureData(&EarthObjData, "Earth.tga", texture, 0);
 
-	Objtest MoonObjData;
+	ObjData MoonObjData;
 	LoadObjFile(&MoonObjData, "earth/Earth.obj");
 	LoadObjToMemory(&MoonObjData, 5.0f, bunnyOffset, texture, multiTexture, 1);
 	//LoadTextureData(&MoonObjData, "Moon.tga", texture, 1);
 
-	Objtest SunObjData;
+	ObjData SunObjData;
 	LoadObjFile(&SunObjData, "earth/Earth.obj");
 	LoadObjToMemory(&SunObjData, 5.0f, bunnyOffset, texture, multiTexture, 2);
 	//LoadTextureData(&SunObjData, "Sun.tga", texture, 2);
