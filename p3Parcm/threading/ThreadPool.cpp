@@ -11,7 +11,7 @@ ThreadPool::ThreadPool(String name, int numWorkers)
 
 	for (int i = 0; i < this->numWorkers; i++)
 	{
-		this->inactiveThreads.push(new PoolWorkerThread(i, this));
+		//this->inactiveThreads.push(new PoolWorkerThread(i, this));
 	}
 }
 
@@ -29,11 +29,14 @@ void ThreadPool::startScheduler()
 {
 	this->running = true;
 	this->start();
+
+
 }
 
 void ThreadPool::stopScheduler()
 {
 	this->running = false;
+
 }
 
 void ThreadPool::scheduleTask(IWorkerAction* action)
@@ -48,16 +51,17 @@ void ThreadPool::run()
 
 	while (running)
 	{
-
 		//std::cout << ticks << std::endl;
-
+		//std::cout << inactiveThreads.size() << std::endl;
+		//std::cout << activeThreads.size() << std::endl;
 		if (!this->pendingActions.empty())
 		{
+			//std::cout << "here" << std::endl;
+
 			//std::cout << pendingActions.size() << std::endl;
 
 			if (!this->inactiveThreads.empty())
 			{
-
 				//std::cout << inactiveThreads.size() << std::endl;
 
 				PoolWorkerThread* WorkerThread = this->inactiveThreads.front();
@@ -115,7 +119,8 @@ void ThreadPool::onFinished(int threadID)
 		delete this->activeThreads[threadID];
 		this->activeThreads.erase(threadID);
 
-		this->inactiveThreads.push(new PoolWorkerThread(threadID, this));
+		//this->inactiveThreads.push(new PoolWorkerThread(threadID, this));
 
 	}
+
 }

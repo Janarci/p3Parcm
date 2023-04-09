@@ -1,24 +1,9 @@
 ﻿#pragma once
-#define STB_IMAGE_IMPLEMENTATION
 
 #include "stb_image.h"
+#include "structs.h"
 
-struct VertexData {
-	glm::vec3 position;
-	glm::vec2 UV;
-	glm::vec3 normal;
-};
 
-struct ObjData {
-	tinyobj::attrib_t attrib;
-	std::vector<tinyobj::shape_t> shapes;
-	GLulong numFaces;
-	GLuint vaoId;
-
-	std::string baseDir;
-	std::vector<tinyobj::material_t> materials;
-	std::map<std::string, GLuint> textures;
-};
 
 std::string GetBaseDir(const std::string& filepath) {
 	if (filepath.find_last_of("/\\") != std::string::npos)

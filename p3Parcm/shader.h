@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <fstream>
 
 GLuint loadShaders(std::string vertexShaderPath, std::string fragmentShaderPath) {
 

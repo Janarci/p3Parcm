@@ -108,6 +108,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,14 +133,34 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ObjectMesh.cpp" />
+    <ClCompile Include="objLoader.cpp" />
+    <ClCompile Include="Runner.cpp" />
+    <ClCompile Include="threading\IExecutionEvent.cpp" />
+    <ClCompile Include="threading\IWorkerAction.cpp" />
+    <ClCompile Include="threading\PoolWorkerThread.cpp" />
+    <ClCompile Include="threading\IETThread.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="threading\testThread.cpp" />
+    <ClCompile Include="threading\ThreadPool.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ObjectMesh.h" />
+    <ClInclude Include="objLoader.h" />
     <ClInclude Include="Obj_mesh.h" />
+    <ClInclude Include="Runner.h" />
+    <ClInclude Include="threading\IExecutionEvent.h" />
+    <ClInclude Include="threading\IWorkerAction.h" />
+    <ClInclude Include="threading\PoolWorkerThread.h" />
+    <ClInclude Include="threading\IETThread.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="skybox.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="threading\testThread.h" />
+    <ClInclude Include="threading\ThreadPool.h" />
     <ClInclude Include="tiny_obj_loader.h" />
+    <ClInclude Include="includes.h" />
+    <ClInclude Include="structs.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
